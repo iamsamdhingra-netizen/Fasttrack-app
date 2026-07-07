@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FastTrack</string>
+    <string name="widget_label">Fasting Timer</string>
+</resources>
