@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Timeline
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import com.local.fasttrack.ui.FastingViewModel
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                             NavigationBarItem(
                                 selected = tab == 1,
                                 onClick = { tab = 1 },
-                                icon = { Icon(Icons.Filled.Timeline, contentDescription = "History") },
+                                icon = { Icon(Icons.Filled.List, contentDescription = "History") },
                                 label = { Text("Progress") }
                             )
                         }
