@@ -4,8 +4,10 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -36,7 +38,7 @@ fun HomeScreen(viewModel: FastingViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScrollFix()
+            .verticalScroll(rememberScrollState())
             .padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -236,8 +238,3 @@ private fun formatDuration(totalSeconds: Double): String {
     return String.format(Locale.US, "%02d:%02d:%02d", h, m, sec)
 }
 
-// Small helper so we don't need to pull in an extra import block above.
-@Composable
-private fun Modifier.verticalScrollFix(): Modifier {
-    return this.then(androidx.compose.foundation.verticalScroll(androidx.compose.foundation.rememberScrollState()))
-}
